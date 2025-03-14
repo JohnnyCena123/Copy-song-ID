@@ -9,7 +9,7 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
     bool init(SongInfoObject* songInfo, CustomSongDelegate* songDelegate, bool showSongSelect, bool showPlayMusic, bool showDownload, bool isRobtopSong, bool unkBool, bool isMusicLibrary, int unk) {
         if (!CustomSongWidget::init(songInfo, songDelegate, showSongSelect, showPlayMusic, showDownload, isRobtopSong, unkBool, isMusicLibrary, unk)) return false;
 
-        m_songIDLabel->setPosition(ccp(-115.f, -27.f));
+        this->getChildByID("id-and-size-label")->setPosition(ccp(-115.f, -27.f));
 
         auto CopySongIDMenu = CCMenu::create();
         this->addChildAtPosition(CopySongIDMenu, Anchor::BottomLeft, ccp(-131.f, -27.f));

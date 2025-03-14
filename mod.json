@@ -1,0 +1,14 @@
+{
+	"geode": "4.2.0",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
+	},
+	"id": "johnny_cena.just_a_new_mod",
+	"name": "Just a new mod",
+	"version": "v0.0.0",
+	"developer": "Johnny Cena",
+	"description": ""
+}

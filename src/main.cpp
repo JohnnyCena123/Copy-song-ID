@@ -25,9 +25,9 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
     void onCopySongID(CCObject* sender) {
         bool hasSucceeded = clipboard::write(fmt::format("{}", m_customSongID));
         if (hasSucceeded) {
-            Notification::create("Successfully copied song ID!", NotificationIcon::Success, 1.f);
+            Notification::create("Successfully copied song ID!", NotificationIcon::Success, 1.f)->show();
         } else {
-            Notification::create("Failed to copy song ID.", NotificationIcon::Error, 1.f);
+            Notification::create("Failed to copy song ID.", NotificationIcon::Error, 1.f)->show();;
         }
     }
 };

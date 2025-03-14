@@ -11,7 +11,7 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
 
         m_songIDLabel->setPositionX(-115.f);
 
-        auto copyButtonSprite = CCSprite::createWithSpriteFrameName("GJ_copyBtn_001.png")
+        auto copyButtonSprite = CCSprite::createWithSpriteFrameName("GJ_copyBtn_001.png");
         copyButtonSprite->setScale(0.5f);
         auto copyButton = CCMenuItemSpriteExtra::create(copyButtonSprite, this, menu_selector(MyCustomSongWidget::onCopySongID));
         m_buttonMenu->addChildAtPosition(copyButton, Anchor::BottomLeft, ccp(-417.f, -187.f));

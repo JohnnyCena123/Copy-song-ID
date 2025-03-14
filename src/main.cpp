@@ -27,7 +27,7 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
         if (hasSucceeded) {
             Notification::create("Successfully copied song ID!", NotificationIcon::Success, 1.f)->show();
         } else {
-            Notification::create("Failed to copy song ID.", NotificationIcon::Error, 1.f)->show();;
+            Notification::create("Failed to copy song ID.", NotificationIcon::Error, 1.f)->show();
         }
     }
 };

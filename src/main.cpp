@@ -37,15 +37,15 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
         return true;
     }
 
-    // void positionInfoObjects() {
-    //     if (m_isMusicLibrary) {
-    //         m_fields->m_copySongIDMenu->setPosition(ccp(-142.f, -10.f));
-    //         m_songIDLabel->setPosition(ccp(-131.f, -10.f));
-    //     } else {
-    //         m_fields->m_copySongIDMenu->setPosition(ccp(-131.f, -27.f));
-    //         m_songIDLabel->setPosition(ccp(-115.f, -27.f));
-    //     }
-    // }
+    void positionInfoObjects() {
+        if (m_isMusicLibrary) {
+            m_fields->m_copySongIDMenu->setPosition(ccp(-142.f, -10.f));
+            m_songIDLabel->setPosition(ccp(-131.f, -10.f));
+        } else {
+            m_fields->m_copySongIDMenu->setPosition(ccp(-131.f, -27.f));
+            m_songIDLabel->setPosition(ccp(-115.f, -27.f));
+        }
+    }
 
     void onCopySongID(CCObject* sender) {
         bool hasSucceeded = clipboard::write(fmt::format("{}", m_customSongID));

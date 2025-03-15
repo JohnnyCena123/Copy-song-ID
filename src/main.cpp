@@ -1,6 +1,8 @@
 #include <Geode/modify/MenuLayer.hpp>
 #include <Geode/modify/CustomSongWidget.hpp>
 
+using namespace geode::prelude
+
 bool alreadyCalled = false;
 bool isSongPreviews = false;
 
@@ -17,7 +19,7 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
 
 		CCSprite* copySongIDButtonSprite = CCSprite::createWithSpriteFrameName("GJ_copyBtn_001.png");
 		copySongIDButtonSprite->setScale(isMusicLibrary ? 0.375f : 0.5f);
-		
+
 		fields->m_copySongIDButton = CCMenuItemSpriteExtra::create(copySongIDButtonSprite, this, menu_selector(MyCustomSongWidget::onCopySongID));
 		fields->m_copySongIDButton->setPosition({m_downloadBtn->getPositionX() - 31.f, m_downloadBtn->getPositionY() - 5.f});
 		if (isMusicLibrary) {

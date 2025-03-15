@@ -7,12 +7,14 @@ using namespace geode::prelude;
 class $modify(MyCustomSongWidget, CustomSongWidget) {
 
     struct Fields {
+        bool m_hasInitialized;
         CCMenu* m_copySongIDMenu;
         CCMenuItemSpriteExtra* m_copySongIDButton;
     };
     
     bool init(SongInfoObject* songInfo, CustomSongDelegate* songDelegate, bool showSongSelect, bool showPlayMusic, bool showDownload, bool isRobtopSong, bool unkBool, bool isMusicLibrary, int unk) {
         if (!CustomSongWidget::init(songInfo, songDelegate, showSongSelect, showPlayMusic, showDownload, isRobtopSong, unkBool, isMusicLibrary, unk)) return false;
+        m_fields->m_hasInitialized = true;
 
         m_fields->m_copySongIDMenu = CCMenu::create();
         auto copySongIDButtonSprite = CCSprite::createWithSpriteFrameName("GJ_copyBtn_001.png");
@@ -38,6 +40,8 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
     }
 
     void positionInfoObjects() {
+        if (!m_fields->m_hasInitialized) return;
+        
         if (m_isMusicLibrary) {
             m_fields->m_copySongIDMenu->setPosition(ccp(-142.f, -10.f));
             m_songIDLabel->setPosition(ccp(-131.f, -10.f));

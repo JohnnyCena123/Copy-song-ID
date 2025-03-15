@@ -24,7 +24,7 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
 		fields->m_copySongIDButton->setPosition({m_downloadBtn->getPositionX() - 31.f, m_downloadBtn->getPositionY() - 5.f});
 		if (isMusicLibrary) {
 			fields->m_copySongIDButton->setPositionY(fields->m_copySongIDButton->getPositionY() - 2.5f);
-			const bool songIsDownloaded = std::filesystem::exists(MusicDownloadManager::sharedState()->pathForSong(m_customSongID));
+			const bool songIsDownloaded = std::filesystem::exists(static_cast<std::string>(MusicDownloadManager::sharedState()->pathForSong(m_customSongID)));
 			if ((!songIsDownloaded || LevelEditorLayer::get()) && isSongPreviews) fields->m_copySongIDButton->setPositionX(fields->m_copySongIDButton->getPositionX() - 37.5f);
 		}
 		fields->m_copySongIDButton->setID("copy-song-id-button"_spr);

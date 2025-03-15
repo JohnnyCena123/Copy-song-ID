@@ -1,5 +1,4 @@
 #include <Geode/modify/MenuLayer.hpp>
-#include <Geode/modify/CustomSongWidget.hpp>
 
 using namespace geode::prelude;
 

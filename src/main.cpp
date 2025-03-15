@@ -28,7 +28,7 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
         }
 
         m_fields->m_copySongIDButton = CCMenuItemSpriteExtra::create(m_copySongIDButtonSprite, this, menu_selector(MyCustomSongWidget::onCopySongID));
-        m_fields->m_copySongIDMenu->addChildAtPosition(copyButton, Anchor::Center);
+        m_fields->m_copySongIDMenu->addChildAtPosition(m_fields->m_copySongIDButton, Anchor::Center);
 
         m_fields->m_copySongIDButton->setID("copy-song-id-button");
         copySongIDMenu->setID("copy-song-id-menu");

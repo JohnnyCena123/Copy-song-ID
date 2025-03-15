@@ -14,7 +14,6 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
     
     bool init(SongInfoObject* songInfo, CustomSongDelegate* songDelegate, bool showSongSelect, bool showPlayMusic, bool showDownload, bool isRobtopSong, bool unkBool, bool isMusicLibrary, int unk) {
         if (!CustomSongWidget::init(songInfo, songDelegate, showSongSelect, showPlayMusic, showDownload, isRobtopSong, unkBool, isMusicLibrary, unk)) return false;
-        m_fields->m_hasInitialized = true;
 
         m_fields->m_copySongIDMenu = CCMenu::create();
         auto copySongIDButtonSprite = CCSprite::createWithSpriteFrameName("GJ_copyBtn_001.png");
@@ -35,6 +34,7 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
         m_fields->m_copySongIDButton->setID("copy-song-id-button");
         m_fields->m_copySongIDMenu->setID("copy-song-id-menu");
 
+        m_fields->m_hasInitialized = true;
 
         return true;
     }

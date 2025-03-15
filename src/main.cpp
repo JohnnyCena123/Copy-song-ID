@@ -40,8 +40,9 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
     }
 
     void positionInfoObjects() {
+        CustomSongWidget::positionInfoObjects();
         if (!m_fields->m_hasInitialized) return;
-        
+
         if (m_isMusicLibrary) {
             m_fields->m_copySongIDMenu->setPosition(ccp(-142.f, -10.f));
             m_songIDLabel->setPosition(ccp(-131.f, -10.f));

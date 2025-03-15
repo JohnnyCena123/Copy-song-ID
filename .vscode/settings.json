@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "array": "cpp",
+        "tuple": "cpp",
+        "variant": "cpp",
+        "reflect": "cpp",
+        "filesystem": "cpp",
+        "xlocinfo": "cpp",
+        "xstring": "cpp",
+        "ios": "cpp"
+    },
+    "geode.textureQuality": "High"
+}

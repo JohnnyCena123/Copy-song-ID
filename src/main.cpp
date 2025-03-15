@@ -15,23 +15,23 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
         if (!CustomSongWidget::init(songInfo, songDelegate, showSongSelect, showPlayMusic, showDownload, isRobtopSong, unkBool, isMusicLibrary, unk)) return false;
 
         m_fields->m_copySongIDMenu = CCMenu::create();
-        auto m_copySongIDButtonSprite = CCSprite::createWithSpriteFrameName("GJ_copyBtn_001.png");
+        auto copySongIDButtonSprite = CCSprite::createWithSpriteFrameName("GJ_copyBtn_001.png");
 
         if (isMusicLibrary) {
             this->addChildAtPosition(m_fields->m_copySongIDMenu, Anchor::BottomLeft, ccp(-142.f, -10.f));
             m_songIDLabel->setPosition(ccp(-131.f, -10.f));
-            m_copySongIDButtonSprite->setScale(0.375f);
+            copySongIDButtonSprite->setScale(0.375f);
         } else {
             this->addChildAtPosition(m_fields->m_copySongIDMenu, Anchor::BottomLeft, ccp(-131.f, -27.f));
             m_songIDLabel->setPosition(ccp(-115.f, -27.f));
-            m_copySongIDButtonSprite->setScale(0.5f);
+            copySongIDButtonSprite->setScale(0.5f);
         }
 
-        m_fields->m_copySongIDButton = CCMenuItemSpriteExtra::create(m_copySongIDButtonSprite, this, menu_selector(MyCustomSongWidget::onCopySongID));
+        m_fields->m_copySongIDButton = CCMenuItemSpriteExtra::create(copySongIDButtonSprite, this, menu_selector(MyCustomSongWidget::onCopySongID));
         m_fields->m_copySongIDMenu->addChildAtPosition(m_fields->m_copySongIDButton, Anchor::Center);
 
         m_fields->m_copySongIDButton->setID("copy-song-id-button");
-        copySongIDMenu->setID("copy-song-id-menu");
+        m_fields->m_copySongIDMenu->setID("copy-song-id-menu");
 
 
         return true;

@@ -31,7 +31,7 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
 
 	void onCopySongID(CCObject* sender) {
 		(void) clipboard::write(fmt::format("{}", m_customSongID));
-		Notification::create(fmt::format("Song ID {} was copied.", m_customSongID))->show();
+		Notification::create(fmt::format("Copied song ID {} to clipboard!", m_customSongID), NotificationIcon::Success, 1.f)->show();
 	}
 };
 

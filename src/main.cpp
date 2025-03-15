@@ -62,13 +62,8 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
         positionIDLabel();
     }
 
-    void downloadSongFailed(int p0, GJSongError p1) {
-        CustomSongWidget::downloadSongFailed(p0, p1);
-        positionIDLabel();
-    }
-
-    void downloadSFXFailed(int p0) {
-        CustomSongWidget::downloadSFXFailed(p0, p1);
+    void downloadSFXFinished(int p0) {
+        CustomSongWidget::downloadSFXFinished(p0);
         positionIDLabel();
     }
 

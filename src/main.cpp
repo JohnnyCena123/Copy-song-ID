@@ -15,7 +15,7 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
 		CCSprite* copySongIDButtonSprite = CCSprite::createWithSpriteFrameName("GJ_copyBtn_001.png");
 		copySongIDButtonSprite->setScale(isMusicLibrary ? 0.375f : 0.5f);
 
-
+    }
 };
 
 class $modify(DoesSongPreviewsExist, MenuLayer) {

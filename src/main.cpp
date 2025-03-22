@@ -22,7 +22,7 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
 			copySongIDButton->setPositionY(copySongIDButton->getPositionY() - 2.5f);
 			const bool songIsDownloaded = std::filesystem::exists(static_cast<std::string>(MusicDownloadManager::sharedState()->pathForSong(m_customSongID)));
 			if ((!songIsDownloaded || LevelEditorLayer::get()) && isSongPreviews) copySongIDButton->setPositionX(copySongIDButton->getPositionX() - 37.5f);
-		} else if (showSongSelect) copySongIDButton->setPosition({-110.f, -120.f});
+		} else if (showSongSelect) copySongIDButton->setPosition({m_selectSongBtn->getPositionX() + 19.f, m_selectSongBtn->getPositionY() + 60.f});
 		copySongIDButton->setID("copy-song-id-button"_spr);
 
 		m_buttonMenu->addChild(copySongIDButton);

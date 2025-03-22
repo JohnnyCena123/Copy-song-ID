@@ -1,4 +1,5 @@
-#include <Geode/Geode.hpp>
+#include <Geode/modify/MenuLayer.hpp>
+#include <Geode/modify/CustomSongWidget.hpp>
 
 using namespace geode::prelude;
 
@@ -10,7 +11,7 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
 	bool init(SongInfoObject* songInfo, CustomSongDelegate* songDelegate, bool showSongSelect, bool showPlayMusic, bool showDownload, bool isRobtopSong, bool unkBool, bool isMusicLibrary, int unk) {
 		if (!CustomSongWidget::init(songInfo, songDelegate, showSongSelect, showPlayMusic, showDownload, isRobtopSong, unkBool, isMusicLibrary, unk)) return false;
 
-		if (!m_downloadBtn) return true;
+		if (!m_downloadBtn || m_customSongID < 1 || m_isRobtopSong) return true;
 
 		CCSprite* copySongIDButtonSprite = CCSprite::createWithSpriteFrameName("GJ_copyBtn_001.png");
 		copySongIDButtonSprite->setScale(isMusicLibrary ? 0.375f : 0.5f);
@@ -21,7 +22,7 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
 			copySongIDButton->setPositionY(copySongIDButton->getPositionY() - 2.5f);
 			const bool songIsDownloaded = std::filesystem::exists(static_cast<std::string>(MusicDownloadManager::sharedState()->pathForSong(m_customSongID)));
 			if ((!songIsDownloaded || LevelEditorLayer::get()) && isSongPreviews) copySongIDButton->setPositionX(copySongIDButton->getPositionX() - 37.5f);
-		}
+		} else if (showSongSelect) copySongIDButton->setPosition({m_selectSongBtn->getPositionX() + 19.f, m_selectSongBtn->getPositionY() + 60.f});
 		copySongIDButton->setID("copy-song-id-button"_spr);
 
 		m_buttonMenu->addChild(copySongIDButton);
@@ -31,7 +32,7 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
 
 	void onCopySongID(CCObject* sender) {
 		(void) clipboard::write(fmt::format("{}", m_customSongID));
-		Notification::create(fmt::format("Copied song ID {} to clipboard!", m_customSongID), NotificationIcon::Success, 1.f)->show();
+		Notification::create(fmt::format("Song ID {} was copied.", m_customSongID))->show();
 	}
 };
 

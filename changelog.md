@@ -1,3 +1,6 @@
+# 1.2.1
+- something pretty sneaky
+
 # 1.2.0
 - Fix buttons overlapping in the editor song selection popup
 - Thanks to Erymanthus again for fixing this problem

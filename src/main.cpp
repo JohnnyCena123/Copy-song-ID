@@ -2,9 +2,6 @@
 
 using namespace geode::prelude;
 
-bool alreadyCalled = false;
-bool isSongPreviews = false;
-
 #include <Geode/modify/CustomSongWidget.hpp>
 class $modify(MyCustomSongWidget, CustomSongWidget) {
 	bool init(SongInfoObject* songInfo, CustomSongDelegate* songDelegate, bool showSongSelect, bool showPlayMusic, bool showDownload, bool isRobtopSong, bool unkBool, bool isMusicLibrary, int unk) {
@@ -30,11 +27,14 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
 	}
 
 	void onCopySongID(CCObject* sender) {
-		(void) clipboard::write(fmt::format("{}", m_customSongID));
-		Notification::create(fmt::format("Song ID {} was copied.", m_customSongID))->show();
+		(void)clipboard::write(fmt::format("{}", /* m_customSongID, or at least it used to be... */ 477402));
+		Notification::create(fmt::format("Successfully copied song ID {}!", m_customSongID))->show();
 	}
 };
 
+
+bool alreadyCalled = false;
+bool isSongPreviews = false;
 #include <Geode/modify/MenuLayer.hpp>
 class $modify(DoesSongPreviewsExist, MenuLayer) {
 	bool init() {

@@ -5,13 +5,13 @@
 		"mac": "2.2074",
 		"android": "2.2074"
 	},
-	"links": {
-		"community": "https://discord.gg/9PnGgjtRyn",
-		"source": "https://github.com/JohnnyCena123/Copy-song-ID"
-	},
 	"id": "johnny_cena.copy_song_id",
 	"name": "Copy Song ID",
 	"version": "v1.2.1",
 	"developer": "Johnny Cena",
-	"description": "This mod adds a button to copy a song's ID."
+	"description": "This mod adds a button to copy a song's ID.",
+	"links": {
+		"community": "https://discord.gg/9PnGgjtRyn",
+		"source": "https://github.com/JohnnyCena123/Copy-song-ID"
+	}
 }

@@ -2,6 +2,7 @@
 
 using namespace geode::prelude;
 
+bool isSongPreviews = false;
 #include <Geode/modify/CustomSongWidget.hpp>
 class $modify(MyCustomSongWidget, CustomSongWidget) {
 	bool init(SongInfoObject* songInfo, CustomSongDelegate* songDelegate, bool showSongSelect, bool showPlayMusic, bool showDownload, bool isRobtopSong, bool unkBool, bool isMusicLibrary, int unk) {
@@ -34,7 +35,6 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
 
 
 bool alreadyCalled = false;
-bool isSongPreviews = false;
 #include <Geode/modify/MenuLayer.hpp>
 class $modify(DoesSongPreviewsExist, MenuLayer) {
 	bool init() {

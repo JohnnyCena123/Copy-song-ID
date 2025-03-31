@@ -1,3 +1,8 @@
+# 1.2.2
+- Fix positioning of the button pt.3
+- This time it was in the song library, the "use" button would cover 
+- the Copy song ID button after you finish downloading the song
+
 # 1.2.1
 - something pretty sneaky
 
@@ -6,7 +11,7 @@
 - Thanks to Erymanthus again for fixing this problem
 
 # 1.1.0
-- Fix positioning of things
+- Fix positioning of the button
 - Code reorganization by Erymanthus
 
 # 1.0.1

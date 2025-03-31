@@ -13,7 +13,7 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
 
 		CCMenuItemSpriteExtra* copySongIDButton = CCMenuItemSpriteExtra::create(copySongIDButtonSprite, this, menu_selector(MyCustomSongWidget::onCopySongID));
 		if (!isMusicLibrary) copySongIDButton->setPosition({m_downloadBtn->getPositionX() + 19.f, m_downloadBtn->getPositionY() + 60.f});
-		else copySongIDButton->setPosition({m_downloadBtn->getPositionX() - 20.f, m_downloadBtn->getPositionY() - 20.f});
+		else copySongIDButton->setPosition({m_downloadBtn->getPositionX() + 20.f, m_downloadBtn->getPositionY() + 20.f});
 		copySongIDButton->setID("copy-song-id-button"_spr);
 
 		m_buttonMenu->addChild(copySongIDButton);

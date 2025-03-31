@@ -10,8 +10,8 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
 
 		if (!m_downloadBtn || m_customSongID < 1 || m_isRobtopSong) return true;
 
-		CCSprite* copySongIDButtonSprite = CCSprite::createWithSpriteFrameName("GJ_copyBtn_001.png");
-		copySongIDButtonSprite->setScale(isMusicLibrary ? 0.375f : 0.5f);
+		CCSprite* copySongIDButtonSprite = CCSprite::createWithSpriteFrameName("diffIcon_03_btn_001.png");
+		copySongIDButtonSprite->setScale(isMusicLibrary ? 0.75f : 1.f);
 
 		CCMenuItemSpriteExtra* copySongIDButton = CCMenuItemSpriteExtra::create(copySongIDButtonSprite, this, menu_selector(MyCustomSongWidget::onCopySongID));
 		copySongIDButton->setPosition({m_downloadBtn->getPositionX() - 31.f, m_downloadBtn->getPositionY() - 5.f});

@@ -1,7 +1,9 @@
+# 1.2.3
+- Revert the April Fools update
+
 # 1.2.2
 - Fix positioning of the button pt.3
-- This time it was in the song library, the "use" button would cover 
-- the Copy song ID button after you finish downloading the song
+- This time it was in the song library, the "use" button would cover the Copy song ID button after you finish downloading the song
 
 # 1.2.1
 - something pretty sneaky

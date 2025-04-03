@@ -19,7 +19,7 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
 		CCMenuItemSpriteExtra* copySongIDButton = CCMenuItemSpriteExtra::create(copySongIDButtonSprite, this, menu_selector(MyCustomSongWidget::onCopySongID));
 		copySongIDButton->setPositionX(m_downloadBtn->getPositionX() + (isMusicLibrary ? 20.f : 21.5f));
 		copySongIDButton->setPositionY(m_downloadBtn->getPositionY() + (isMusicLibrary ? 20.f : 61.5f));
-		copySongIDButton->setID("copy-song-id-button"_spr);
+		copySongIDButton->setID("copy-song"_spr);
 
 		m_buttonMenu->addChild(copySongIDButton);
 
@@ -46,19 +46,19 @@ class $modify(MyCustomSFXWidget, CustomSFXWidget) {
 
 		if (!sfxInfo || sfxInfo->m_folder || !m_downloadButton || m_sfxID < 1 || m_compactMode) return true;
 
-		CCSprite* copySongIDButtonSprite = CCSprite::createWithSpriteFrameName("GJ_copyBtn_001.png");
-		copySongIDButtonSprite->setScale(0.375f);
+		CCSprite* copySFXIDButtonSprite = CCSprite::createWithSpriteFrameName("GJ_copyBtn_001.png");
+		copySFXIDButtonSprite->setScale(0.375f);
 
-		CCMenuItemSpriteExtra* copySongIDButton = CCMenuItemSpriteExtra::create(copySongIDButtonSprite, this, menu_selector(MyCustomSFXWidget::onCopySongID));
-		copySongIDButton->setPosition(m_downloadButton->getPosition() + ccp(20.f, 20.f));
-		copySongIDButton->setID("copy-sfx-id-button"_spr);
+		CCMenuItemSpriteExtra* copySFXIDButton = CCMenuItemSpriteExtra::create(copySFXIDButtonSprite, this, menu_selector(MyCustomSFXWidget::onCopySFXID));
+		copySFXIDButton->setPosition(m_downloadButton->getPosition() + ccp(20.f, 20.f));
+		copySFXIDButton->setID("copy-sfx"_spr);
 
-		m_buttonMenu->addChild(copySongIDButton);
+		m_buttonMenu->addChild(copySFXIDButton);
 
 		return true;
 	}
 
-	void onCopySongID(CCObject* sender) {
+	void onCopySFXID(CCObject* sender) {
 		if (m_sfxID < 1) return Notification::create(fmt::format("SFX ID {} is not a valid ID.", m_sfxID), NotificationIcon::Error, 2.0f)->show();
 		(void) clipboard::write(fmt::format("{} [SFX]", m_sfxID));
 		Notification::create(fmt::format("SFX ID {} was copied.", m_sfxID))->show();

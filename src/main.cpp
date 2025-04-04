@@ -39,7 +39,6 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
 	}
 };
 
-#ifndef GEODE_IS_IOS
 class $modify(MyCustomSFXWidget, CustomSFXWidget) {
 	bool init(SFXInfoObject* sfxInfo, CustomSFXDelegate* sfxDelegate, bool p2, bool p3, bool p4, bool p5, bool p6) {
 		if (!CustomSFXWidget::init(sfxInfo, sfxDelegate, p2, p3, p4, p5, p6)) return false;
@@ -64,4 +63,3 @@ class $modify(MyCustomSFXWidget, CustomSFXWidget) {
 		Notification::create(fmt::format("SFX ID {} was copied.", m_sfxID))->show();
 	}
 };
-#endif

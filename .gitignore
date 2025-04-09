@@ -64,3 +64,6 @@ build-*/
 # CLion
 .idea/
 /cmake-build-*/
+
+# why isn't it here by default
+*.sym

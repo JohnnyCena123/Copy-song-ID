@@ -29,7 +29,7 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
 	void updateWithMultiAssets(gd::string p0, gd::string p1, int p2) {
 		CustomSongWidget::updateWithMultiAssets(p0, p1, p2);
 		if (!m_infoBtn || m_songs.empty() && m_sfx.empty() || m_playbackBtn->isVisible() || m_isMusicLibrary) return;
-		m_infoBtn->setPositionX(m_infoBtn->getPositionX() - 5.f);
+		m_infoBtn->setPositionX(m_infoBtn->getPositionX() - 10.f);
 	}
 
 	void onCopySongID(CCObject* sender) {

@@ -1,3 +1,6 @@
+# 1.3.0
+- Add iOS support.
+
 # 1.2.3
 - Revert the April Fools update
 

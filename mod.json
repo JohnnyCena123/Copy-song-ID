@@ -8,7 +8,7 @@
 	},
 	"id": "johnny_cena.copy_song_id",
 	"name": "Copy Song ID",
-	"version": "v1.3.0",
+	"version": "v1.3.1",
 	"developer": "Johnny Cena",
 	"description": "This mod adds a button to copy a song's ID.",
 	"links": {

@@ -1,3 +1,6 @@
+# 1.3.1
+- Actually add iOS support
+
 # 1.3.0
 - Add iOS support.
 

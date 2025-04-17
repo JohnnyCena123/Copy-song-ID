@@ -1,8 +1,8 @@
-#include <Geode/Geode.hpp>
+#include <Geode/modify/CustomSongWidget.hpp>
+#include <Geode/modify/CustomSFXWidget.hpp>
 
 using namespace geode::prelude;
 
-#include <Geode/modify/CustomSongWidget.hpp>
 class $modify(MyCustomSongWidget, CustomSongWidget) {
 	static void onModify(auto& self) {
 		if (!self.setHookPriorityAfterPost("CustomSongWidget::updateWithMultiAssets", "spaghettdev.songpreview"))
@@ -42,7 +42,6 @@ class $modify(MyCustomSongWidget, CustomSongWidget) {
 	}
 };
 
-#include <Geode/modify/CustomSFXWidget.hpp>
 class $modify(MyCustomSFXWidget, CustomSFXWidget) {
 	bool init(SFXInfoObject* sfxInfo, CustomSFXDelegate* sfxDelegate, bool p2, bool p3, bool p4, bool p5, bool p6) {
 		if (!CustomSFXWidget::init(sfxInfo, sfxDelegate, p2, p3, p4, p5, p6)) return false;
@@ -63,7 +62,7 @@ class $modify(MyCustomSFXWidget, CustomSFXWidget) {
 
 	void onCopySFXID(CCObject* sender) {
 		if (m_sfxID < 1) return Notification::create(fmt::format("SFX ID {} is not a valid ID.", m_sfxID), NotificationIcon::Error, 2.0f)->show();
-		(void) clipboard::write(fmt::format("{}", m_sfxID));
+		(void) clipboard::write(fmt::format("{} [SFX ID]", m_sfxID));
 		Notification::create(fmt::format("Successfully copied SFX ID {}!", m_sfxID), NotificationIcon::Success, 1.f)->show();
 	}
 };
